@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: #080812;
+  color: #e2e8f0;
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+}
+
+/* Glassmorphism card */
+.glass {
+  background: rgba(19, 19, 42, 0.7);
+  border: 1px solid rgba(168, 85, 247, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-hover {
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.glass-hover:hover {
+  border-color: rgba(168, 85, 247, 0.4);
+  box-shadow: 0 0 24px rgba(168, 85, 247, 0.15);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0f0f1e; }
+::-webkit-scrollbar-thumb { background: #3d2a6b; border-radius: 3px; }
+
+/* Pulse animation for live indicator */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+.pulse-dot { animation: pulse-dot 1.5s ease-in-out infinite; }
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Recharts tooltip override */
+.custom-tooltip {
+  background: #13132a !important;
+  border: 1px solid rgba(168,85,247,0.3) !important;
+  border-radius: 8px !important;
+  padding: 10px 14px !important;
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: 12px !important;
+}
